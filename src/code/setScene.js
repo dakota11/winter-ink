@@ -8,9 +8,7 @@ export async function setScene(line) {
 
     _gameStore.updateProperty("currentScene.title", line.vars[0])
     _gameStore.updateProperty("currentScene.character", line.vars[1])
-    console.log(get(_gameStore));
 
-    return Promise.resolve(true);
     return
     helpers.music.play(currentScene.id, "loud")
     await helpers.wait(4)

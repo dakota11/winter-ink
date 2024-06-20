@@ -4,6 +4,7 @@ import { typeText } from "./typeText";
 import { helpers } from "../code/helpers"
 import { setScene } from "./setScene";
 
+
 export async function runLine(lineObj) {
     if (lineObj.type == "action") await runAction(lineObj)
     if (lineObj.type == "text") await runText(lineObj)
@@ -21,7 +22,7 @@ async function runText(lineObj) {
         const component = createComponent({ lineObj }, "spoken")
         console.log(component);
         await typeText(lineObj, component)
-        // console.log(component);
+
     }
 
     // create the TEXT componenet and type it out
@@ -30,8 +31,7 @@ async function runText(lineObj) {
         await typeText(lineObj, component)
     }
 
-    // const newLine = document.getElementById('text-line-' + line.index)
-    // await typeText(line, newLine)
+
 
 }
 
@@ -60,8 +60,9 @@ async function runAction(lineObj) {
 }
 
 
-function runButton(lineObj) {
-    // console.log(lineObj);
+async function runButton(lineObj) {
+    const component = createComponent({ lineObj }, "button")
+    await helpers.fadeToOpacity(component.id, 1, 1)
 }
 
 

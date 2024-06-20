@@ -1,19 +1,15 @@
 <script>
     import { onMount } from "svelte";
     export let _gameStore;
-    import inkText from "../../assets/story/story.json?raw";
-    import { continueStory } from "../../code/continueStory";
-    import { Story } from "inkjs";
+
+    import { inkStory, continueStory } from "../../code/inkStory.js";
 
     import Left from "./Left.svelte";
     import Right from "./Right.svelte";
 
     onMount(() => {
-        console.clear();
         $_gameStore.images.bg.filepath = null;
-        const inkStory = new Story(inkText);
-        window.ink = inkStory;
-        continueStory(null, inkStory);
+        continueStory(null);
     });
 </script>
 

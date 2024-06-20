@@ -10,7 +10,7 @@ export function typeText(line, div) {
         autoStart: false,
         cursor: "",
         deleteSpeed: 0,
-        delay: 0,
+        delay: 20,
         skipAddStyles: true,
     });
 

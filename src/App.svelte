@@ -25,8 +25,9 @@
     background-color: black;
     position: relative;
     width: 100%;
-    padding-top: 50%; /* 16:9 Aspect Ratio */
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
     color: white;
+    border: 5px solid rgba(255, 255, 255, 0.477);
   }
 
   #app-inner {
