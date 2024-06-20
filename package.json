@@ -1,0 +1,25 @@
+{
+  "name": "ink-winter",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^3.0.2",
+    "svelte": "^4.2.12",
+    "vite": "^5.2.0",
+    "vite-plugin-full-reload": "^1.1.0"
+  },
+  "dependencies": {
+    "bootstrap-icons": "^1.11.3",
+    "howler": "^2.2.4",
+    "inkjs": "^2.2.4",
+    "markdown-to-html-converter": "^1.0.4",
+    "pure-snow.js": "^2.1.0",
+    "typewriter-effect": "^2.21.0"
+  }
+}
