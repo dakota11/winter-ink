@@ -3,6 +3,7 @@ import { createComponent } from "./createComponent";
 import { typeText } from "./typeText";
 import { helpers } from "../code/helpers"
 import { setScene } from "./setScene";
+import { _gameStore } from "./stores/gameStore";
 
 
 export async function runLine(lineObj) {
@@ -20,14 +21,17 @@ async function runText(lineObj) {
     // create the SPOKEN componenet and type it out
     if (lineObj.spoken.isSpoken) {
         const component = createComponent({ lineObj }, "spoken")
-        console.log(component);
-        await typeText(lineObj, component)
 
+        await typeText(lineObj, component)
+        _gameStore.updateProperty("lastSpeaker", lineObj.spoken.speaker)
     }
 
     // create the TEXT componenet and type it out
     if (!lineObj.spoken.isSpoken) {
         const component = createComponent({ lineObj }, "text")
+
+
+
         await typeText(lineObj, component)
     }
 
@@ -47,7 +51,7 @@ async function runAction(lineObj) {
     if (lineObj.type == "action" && lineObj.command == "loadImage") {
         const elementId = lineObj.vars[0];
         const filename = lineObj.vars[1]
-        const opacity = parseFloat(lineObj.vars[2])
+        const opacity = parseFloat(lineObj.vars[2] || 0.8)
         await helpers.loadImage(elementId, filename)
         await helpers.fadeToOpacity(elementId, parseFloat(opacity))
     }

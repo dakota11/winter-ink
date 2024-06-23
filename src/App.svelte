@@ -9,14 +9,14 @@
 <div id="app-outer">
   <div id="app-inner">
     <BgImage {_gameStore}></BgImage>
-    <!-- <Game {_gameStore} /> -->
+    <Game {_gameStore} />
 
-    {#if $_gameStore.template == "StartScreen"}
+    <!-- {#if $_gameStore.template == "StartScreen"}
       <StartScreen {_gameStore} />
     {/if}
     {#if $_gameStore.template == "Game"}
       <Game {_gameStore} />
-    {/if}
+    {/if} -->
   </div>
 </div>
 

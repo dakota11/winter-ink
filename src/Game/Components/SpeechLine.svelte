@@ -2,12 +2,19 @@
     export let lineObj, id;
     import { _gameStore } from "../../code/stores/gameStore";
 
-    let isCurrent = false;
+    let isCurrent =
+        $_gameStore.currentScene.character != lineObj.spoken.speaker;
+
+    const lastSpeakerSame = $_gameStore.lastSpeaker == lineObj.spoken.speaker;
+
+    console.log(lineObj.spoken.speaker, isCurrent);
 </script>
 
 <div class="d-flex">
     <div class="text-line" class:ms-auto={isCurrent == true}>
-        <div class="character">{lineObj.spoken.speaker}</div>
+        {#if !lastSpeakerSame}
+            <div class="character">{lineObj.spoken.speaker}</div>
+        {/if}
 
         <div {id}></div>
     </div>
@@ -15,7 +22,7 @@
 
 <style>
     .text-line {
-        width: 40%;
+        width: 45%;
         padding: 17px;
         margin-bottom: 10px;
         border-radius: 12px;

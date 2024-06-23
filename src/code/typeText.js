@@ -4,8 +4,9 @@ import convertToHTML from "markdown-to-html-converter";
 
 
 export function typeText(line, div) {
-    // let formattedLine = convertToHTML(line.text, div);
-    let formattedLine = line.text
+    let formattedLine = convertToHTML(line.text, div);
+    formattedLine = formattedLine.replace(/<br\s*\/?>$/, '');
+
     const typewriter = new Typewriter(div, {
         autoStart: false,
         cursor: "",

@@ -15,7 +15,7 @@
 </script>
 
 <div id="start-screen">
-    <div class="wrapper">
+    <div class="wrapper josefin">
         <div class="w-100 h-100" id="snow" data-count="300"></div>
         <div class="game-title">WINTER</div>
         <div class="buttons">
@@ -53,8 +53,7 @@
         width: 100%;
         font-size: 12vw;
         color: white;
-        font-family: sans-serif;
-        font-weight: bold;
+
         text-shadow: 2px 2px 5px black;
         opacity: 0.8;
     }
@@ -63,6 +62,7 @@
         position: absolute;
         top: 0;
         right: 0;
+        overflow: hidden;
     }
 
     .btn {

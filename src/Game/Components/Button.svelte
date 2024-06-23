@@ -1,6 +1,7 @@
 <script>
     export let lineObj, id;
     import { continueStory } from "../../code/inkStory";
+    import { _gameStore } from "../../code/stores/gameStore";
 
     function click() {
         const buttons = document.querySelectorAll(".story button");
@@ -9,6 +10,7 @@
         if (lineObj.text == "NEXT") {
             const divToClear = document.getElementById("story");
             divToClear.innerHTML = "";
+            _gameStore.updateProperty("lastSpeaker", null);
         }
 
         continueStory(lineObj.index);

@@ -14,3 +14,22 @@ body {
     border-radius: 50%;
     filter: drop-shadow(0 0 10px white);
 }
+
+.josefin {
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+
+.urbanist {
+    font-family: "Urbanist", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+
+.Typewriter__wrapper p {
+    margin: 0;
+}

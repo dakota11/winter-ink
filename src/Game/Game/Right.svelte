@@ -1,6 +1,6 @@
 <script>
     import { onMount } from "svelte";
-    let checkScrollEnabled = false;
+    let checkScrollEnabled = true;
 
     function checkAndScroll() {
         if (!checkScrollEnabled) return;

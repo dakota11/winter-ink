@@ -5,12 +5,14 @@ import { parseLine } from "./parseLine";
 import { runLine } from "./runLine"
 
 
+
 let storyInstance;
 
 export function createStory() {
     if (!storyInstance) {
         console.clear();
         storyInstance = new Story(inkText);
+
     }
     return storyInstance;
 }
@@ -34,3 +36,7 @@ export async function continueStory(choiceIndex = null) {
     }
 }
 
+
+
+
+window.inkStory = inkStory

@@ -13,7 +13,7 @@
     });
 </script>
 
-<div class="" id="main">
+<div class="urbanist" id="main">
     <div class="left">
         <Left {_gameStore} />
     </div>
